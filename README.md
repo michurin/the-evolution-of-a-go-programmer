@@ -30,6 +30,26 @@ func Factorial(n int) int {
 }
 ```
 
+## True functional Go programmer
+
+```go
+package fac
+
+func factorialT(n, current int) int {
+	if n == 1 {
+		return current
+	}
+	return factorialT(n-1, n * current)
+}
+
+func Factorial(n int) int {
+	if n <= 1 {
+		return 1
+	}
+	return factorialT(n-1, n)
+}
+```
+
 ## Generic Go programmer
 
 ```go
